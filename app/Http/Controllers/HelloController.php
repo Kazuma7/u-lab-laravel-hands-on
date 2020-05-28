@@ -22,4 +22,30 @@ class HelloController extends Controller
 
         return $result;
     }
+
+    public function strImplode(){
+
+        $str1 = 'hello';
+        $str2 = 'world';
+
+        $str1 .= $str2;
+
+        $implode = $str1 . ' ' . $str2;
+        // $implode = "{$str1} ああ {$str2}";
+
+        return $implode;
+    }
+
+    public function arr2()
+    {
+        $arr = [
+            "data" => ['apple','orrange'],
+            "meta" => ['graph','maskat']
+        ];
+
+        $data = $arr["data"];
+
+        return $data;
+    }
+
 }
