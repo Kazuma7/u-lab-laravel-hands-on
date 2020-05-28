@@ -48,4 +48,26 @@ class HelloController extends Controller
         return $data;
     }
 
+    public function foreach()
+    {
+        $arr = [
+            ['apple','orrange'],
+            ['graph','maskat']
+        ];
+
+        $str = '';
+
+        foreach($arr as $value){
+            $str .= $value[0];
+            $str .= $value[1];
+            $str .= ' ';
+        }
+
+        return $str;
+        
+    }
+
+    public function name(){
+        
+    }
 }

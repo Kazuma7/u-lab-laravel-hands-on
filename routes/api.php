@@ -23,6 +23,11 @@ Route::get('/v1/hello/str-implode', 'HelloController@strImplode');
 
 Route::get('/v1/hello/array2', 'HelloController@arr2');
 
+Route::get('/v1/hello/foreach', 'HelloController@foreach');
+
+Route::get('/v1/hello/name', 'HelloController@name');
+
+
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
