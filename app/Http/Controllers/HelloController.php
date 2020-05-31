@@ -68,6 +68,45 @@ class HelloController extends Controller
     }
 
     public function name(){
-        
+        $array = array(
+            "lemon" => "yellow",
+            "apple" => "red",
+            "banana" => "yellow"
+        );
+
+        $array2 = [
+            "lemon" => "yellow",
+            "apple" => "red",
+            "banana" => "yellow"
+        ];
+
+        return $array2["apple"];
     }
+
+    public function unset(){
+        $user = [
+            "0" => "Tom",
+            "1" => "Katy",
+            "2" => "Jim",
+            "3" => "Mary"
+        ];
+
+        unset($user[1]);
+
+        return $user;
+    }
+
+    public function mazime(){
+        $hoge = "124";
+
+        $piyo = 125;
+
+        if($hoge == $piyo){
+            return "ture";
+        }else{
+            return "false";
+        }
+    }
+
+    
 }
