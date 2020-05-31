@@ -108,5 +108,59 @@ class HelloController extends Controller
         }
     }
 
-    
+    public function san(){
+        return "さん";
+    }
+
+    public function goodcall($name){
+        return "おはよう{$name}".$this->san();
+    }
+
+    public function aisatu(){
+        return $this->goodcall("太郎");
+    }
+
+    public function age($age){
+        return "年齢は{$age}";
+    }
+
+    public function sexual($sexual){
+        if($sexual = 0){
+            return "私は男性です";
+        }else{
+            return "私は女性です";
+        }
+    }
+
+    public function pet($pet){
+        return "私は{$pet}を飼っています";
+    }
+
+    public function identity(){
+        return $this->age(14)."\n".$this->sexual(1)."\n".$this->pet("dog");
+    }
+
+}
+
+class cash extends Controller
+{
+    public function age($age){
+        return "年齢は{$age}";
+    }
+
+    public function sexual($sexual){
+        if($sexual = 0){
+            return "私は男性です";
+        }else{
+            return "私は女性です";
+        }
+    }
+
+    public function pet($pet){
+        return "私は{$pet}を飼っています";
+    }
+
+    public function identity(){
+        return $this->age(14)."\n".$this->sexual(1)."\n".$this->pet("dog");
+    }
 }
