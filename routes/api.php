@@ -14,24 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/v1/hello', 'HelloController@index');
 
-Route::get('/v1/hello/var', 'HelloController@varindex');
+//端末 API KEY 生成
+Route::post('/v1/key', 'Api\KeyController@generate');
 
-Route::get('/v1/hello/str-implode', 'HelloController@strImplode');
+Route::get('/v1/user', 'Api\UserController@show');
 
-Route::get('/v1/hello/array2', 'HelloController@arr2');
-
-Route::get('/v1/hello/foreach', 'HelloController@foreach');
-
-Route::get('/v1/hello/name', 'HelloController@name');
-
-Route::get('/v1/hello/unset', 'HelloController@unset');
-
-Route::get('/v1/hello/mazime', 'HelloController@mazime');
-
-Route::get('/v1/hello/aisatu', 'HelloController@aisatu');
-Route::get('/v1/hello/aisatu2', 'HelloController@identity');
+Route::patch('/v1/user', 'Api\UserController@update');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
