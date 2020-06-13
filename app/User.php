@@ -35,6 +35,6 @@ class User extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id', 'park_id', 'latitude', 'longitude'
+        'name', 'token'
     ];
 }
