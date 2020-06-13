@@ -34,8 +34,8 @@ class UserLocationController extends Controller
 
 
         $park_id = $request->parkID;
-        $longitude = $request->$longitude;
-        $latitude = $request->$latitude;
+        $longitude = $request->longitude;
+        $latitude = $request->latitude;
 
         $user = User::where('token','=',$token)->first();
 
