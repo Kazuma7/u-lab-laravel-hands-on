@@ -22,6 +22,10 @@ Route::get('/v1/user', 'Api\UserController@show');
 
 Route::patch('/v1/user', 'Api\UserController@update');
 
+Route::get('/v1/user/location', 'Api\UserLocationController@index');
+
+Route::patch('/v1/user/location', 'Api\UserLocationController@create');
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
