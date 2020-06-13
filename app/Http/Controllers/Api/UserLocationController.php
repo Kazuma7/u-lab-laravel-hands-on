@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 class UserLocationController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         //start Middlewaraで処理するのが普通
         $token = $request->header('X-API-TOKEN');
@@ -34,15 +34,15 @@ class UserLocationController extends Controller
 
 
         $park_id = $request->parkID;
-        $longtitude = $request->$longtitude;
+        $longitude = $request->$longitude;
         $latitude = $request->$latitude;
 
-        User::where('token','=',$token)->first();
+        $user = User::where('token','=',$token)->first();
 
         $user_location = UserLocation::create([
             'user_id' => $user->id,
             'park_id' => $park_id,
-            'longitude' => $longtitude,
+            'longitude' => $longitude,
             'latitude' => $latitude
         ]);
 
