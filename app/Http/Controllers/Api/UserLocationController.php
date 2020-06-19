@@ -19,6 +19,14 @@ class UserLocationController extends Controller
             return abort('401'); 
         }
 
+        $user = User::where('token','=',$token)->first();
+
+        $user_locations = UserLocation::where('user_id','=',$user->id)->paginate(5);
+
+        return[
+            "data" => $user_locations
+        ];
+
 
     }
 
