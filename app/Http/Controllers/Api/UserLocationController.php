@@ -21,11 +21,9 @@ class UserLocationController extends Controller
 
         $user = User::where('token','=',$token)->first();
 
-        $user_locations = UserLocation::where('user_id','=',$user->id)->paginate(5);
+        $user_location = UserLocation::where('user_id','=',$user->id)->paginate(5);
 
-        return[
-            "data" => $user_locations
-        ];
+        return $user_location;
 
 
     }
